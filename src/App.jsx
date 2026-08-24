@@ -1,9 +1,17 @@
+import TaskForm from './components/TaskForm.jsx'
+import TaskList from './components/TaskList.jsx'
+
 function App() {
   return (
-    <main>
-      <h1>Al Grano — Gestor de tareas</h1>
-      <p>Proyecto preparado. La interfaz se construye en la Fase 2.</p>
-    </main>
+    <div className="app">
+      <header className="app__header">
+        <h1>Al Grano — Gestor de tareas</h1>
+      </header>
+      <main className="app__main">
+        <TaskForm />
+        <TaskList />
+      </main>
+    </div>
   )
 }
 

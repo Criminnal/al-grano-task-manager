@@ -147,7 +147,7 @@ sin diferencias.
 
 ### Fase 2 — Interfaz base
 
-**Estado:** ⚪ Pendiente
+**Estado:** 🟢 Completado (2026-08-24)
 
 **Objetivo**
 Construir la estructura visual completa de la aplicación, todavía **sin lógica**: se ve la pantalla
@@ -162,13 +162,24 @@ final pero los botones aún no hacen nada.
    `:focus` visibles.
 
 **Criterios de aceptación (verificables)**
-- [ ] Existen `src/components/TaskForm.jsx`, `src/components/TaskList.jsx`,
+- [x] Existen `src/components/TaskForm.jsx`, `src/components/TaskList.jsx`,
       `src/components/TaskItem.jsx` y `src/styles.css`.
-- [ ] `src/App.jsx` importa y renderiza `TaskForm` y `TaskList`.
-- [ ] `src/main.jsx` (o `App.jsx`) importa `styles.css`.
-- [ ] La página muestra: título, campo de texto, botón «Añadir» y una zona de lista.
-- [ ] El formulario usa `<label>` asociado al `<input>` (accesibilidad básica).
-- [ ] `npm run build` y `npm run lint` pasan sin errores.
+- [x] `src/App.jsx` importa y renderiza `TaskForm` y `TaskList`.
+- [x] `src/main.jsx` (o `App.jsx`) importa `styles.css`.
+- [x] La página muestra: título, campo de texto, botón «Añadir» y una zona de lista.
+- [x] El formulario usa `<label>` asociado al `<input>` (accesibilidad básica).
+- [x] `npm run build` y `npm run lint` pasan sin errores.
+
+**Nota:** `TaskList` recibe una prop `tasks` con valor por defecto `[]` (sin `useState`, sin datos
+de ejemplo), por lo que en esta fase solo es visible el mensaje de lista vacía. `TaskItem` queda
+implementado y referenciado desde `TaskList.map`, listo para mostrarse en la Fase 3 cuando exista
+gestión real de tareas.
+
+**Corrección aplicada (2026-08-24):** en la media query móvil, `.task-form__field` heredaba
+`flex-basis: 200px` de la regla base, que en `flex-direction: column` se interpretaba como altura
+mínima y generaba un hueco vertical artificial de ~135px antes del botón. Se añadió
+`.task-form__field { flex: 0 1 auto; }` dentro de la media query para restablecer el
+comportamiento flexible en columna, sin afectar al diseño de escritorio.
 
 ---
 
@@ -293,7 +304,7 @@ Verificar que todos los requisitos iniciales funcionan, dejar el repositorio lim
 | Fase | Estado | Fecha de cierre | Commit |
 | --- | --- | --- | --- |
 | 1 — Preparación del proyecto | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 2 — Interfaz base | ⚪ Pendiente | — | — |
+| 2 — Interfaz base | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 3 — Gestión de tareas | ⚪ Pendiente | — | — |
 | 4 — Prioridades | ⚪ Pendiente | — | — |
 | 5 — Persistencia local | ⚪ Pendiente | — | — |
