@@ -185,7 +185,7 @@ comportamiento flexible en columna, sin afectar al diseño de escritorio.
 
 ### Fase 3 — Gestión de tareas
 
-**Estado:** ⚪ Pendiente
+**Estado:** 🟢 Completado (2026-08-24)
 
 **Objetivo**
 Que la aplicación funcione de verdad: crear, listar, completar/descompletar y eliminar tareas
@@ -201,14 +201,21 @@ Que la aplicación funcione de verdad: crear, listar, completar/descompletar y e
 6. Mostrar un mensaje cuando no hay tareas.
 
 **Criterios de aceptación (verificables)**
-- [ ] `src/App.jsx` define las funciones de añadir, alternar y eliminar, y las pasa como props.
-- [ ] Se puede añadir una tarea y aparece en la lista.
-- [ ] Enviar el formulario vacío o con solo espacios **no** crea ninguna tarea.
-- [ ] Marcar el checkbox tacha la tarea; desmarcarlo la devuelve a pendiente.
-- [ ] El botón eliminar borra únicamente la tarea correspondiente.
-- [ ] Con la lista vacía se muestra un mensaje informativo, no una zona en blanco.
-- [ ] Cada elemento de la lista tiene una `key` estable basada en `task.id` (no en el índice).
-- [ ] `npm run build` y `npm run lint` pasan sin errores.
+- [x] `src/App.jsx` define las funciones de añadir, alternar y eliminar, y las pasa como props.
+- [x] Se puede añadir una tarea y aparece en la lista.
+- [x] Enviar el formulario vacío o con solo espacios **no** crea ninguna tarea.
+- [x] Marcar el checkbox tacha la tarea; desmarcarlo la devuelve a pendiente.
+- [x] El botón eliminar borra únicamente la tarea correspondiente.
+- [x] Con la lista vacía se muestra un mensaje informativo, no una zona en blanco.
+- [x] Cada elemento de la lista tiene una `key` estable basada en `task.id` (no en el índice).
+- [x] `npm run build` y `npm run lint` pasan sin errores.
+
+**Nota:** la validación existe en dos capas con propósitos distintos. `TaskForm` valida por
+experiencia de usuario: evita envíos innecesarios y controla cuándo se limpia el campo. `App.addTask`
+protege además la integridad del propio estado —vuelve a aplicar `trim()` y descarta el resultado si
+queda vacío antes de crear la tarea—, por lo que no debe asumirse que `addTask` recibe siempre texto
+ya válido solo porque `TaskForm` valida primero. Las tres actualizaciones de estado (`addTask`,
+`toggleTask`, `deleteTask`) usan la forma funcional de `setTasks` para evitar estado obsoleto.
 
 ---
 
@@ -305,7 +312,7 @@ Verificar que todos los requisitos iniciales funcionan, dejar el repositorio lim
 | --- | --- | --- | --- |
 | 1 — Preparación del proyecto | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 2 — Interfaz base | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 3 — Gestión de tareas | ⚪ Pendiente | — | — |
+| 3 — Gestión de tareas | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 4 — Prioridades | ⚪ Pendiente | — | — |
 | 5 — Persistencia local | ⚪ Pendiente | — | — |
 | 6 — Revisión final | ⚪ Pendiente | — | — |
