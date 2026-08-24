@@ -338,4 +338,4 @@ de `README.md` y el cierre de este documento.
 | 3 — Gestión de tareas | 🟢 Completado | 2026-08-24 | `f4f9c735ce8f9023cc8a137a479729df6313adca` |
 | 4 — Prioridades | 🟢 Completado | 2026-08-24 | `c197df0a1ff99c2607baaa2896a9253247ebed96` |
 | 5 — Persistencia local | 🟢 Completado | 2026-08-24 | `0b67d79c8da497c8963bb12784f5d2fa4c666eaa` |
-| 6 — Revisión final | 🟢 Completado | 2026-08-24 | (pendiente de commit manual) |
+| 6 — Revisión final | 🟢 Completado | 2026-08-24 | `83023369d007f43542147cbf48c5a47233fb5b64` |
