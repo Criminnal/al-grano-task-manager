@@ -2,17 +2,22 @@ import { useState } from 'react'
 import TaskForm from './components/TaskForm.jsx'
 import TaskList from './components/TaskList.jsx'
 
+const VALID_PRIORITIES = ['baja', 'media', 'alta']
+
 function App() {
   const [tasks, setTasks] = useState([])
 
-  function addTask(text) {
+  function addTask(text, priority) {
     const trimmedText = text.trim()
     if (!trimmedText) return
+
+    const safePriority = VALID_PRIORITIES.includes(priority) ? priority : 'media'
 
     const newTask = {
       id: crypto.randomUUID(),
       text: trimmedText,
       completed: false,
+      priority: safePriority,
       createdAt: Date.now(),
     }
 

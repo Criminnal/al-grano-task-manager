@@ -1,3 +1,9 @@
+const PRIORITY_LABELS = {
+  baja: 'Baja',
+  media: 'Media',
+  alta: 'Alta',
+}
+
 function TaskItem({ task, onToggle, onDelete }) {
   const textClassName = task.completed
     ? 'task-item__text task-item__text--completed'
@@ -9,6 +15,9 @@ function TaskItem({ task, onToggle, onDelete }) {
         <input type="checkbox" checked={task.completed} onChange={() => onToggle(task.id)} />
         <span className={textClassName}>{task.text}</span>
       </label>
+      <span className={`task-item__priority task-item__priority--${task.priority}`}>
+        {PRIORITY_LABELS[task.priority]}
+      </span>
       <button
         type="button"
         className="task-item__delete"

@@ -221,7 +221,7 @@ ya válido solo porque `TaskForm` valida primero. Las tres actualizaciones de es
 
 ### Fase 4 — Prioridades
 
-**Estado:** ⚪ Pendiente
+**Estado:** 🟢 Completado (2026-08-24)
 
 **Objetivo**
 Permitir asignar prioridad baja, media o alta a cada tarea y que se distinga claramente en la
@@ -235,13 +235,19 @@ interfaz.
    («Baja», «Media», «Alta») para no depender solo del color.
 
 **Criterios de aceptación (verificables)**
-- [ ] `TaskForm.jsx` contiene un `<select>` con exactamente las opciones baja, media y alta, con
+- [x] `TaskForm.jsx` contiene un `<select>` con exactamente las opciones baja, media y alta, con
       su `<label>` asociado.
-- [ ] Las tareas nuevas se crean con la propiedad `priority`.
-- [ ] `TaskItem.jsx` renderiza la prioridad como texto visible, no solo como color.
-- [ ] `styles.css` define un estilo diferenciado para cada una de las tres prioridades.
-- [ ] Tras añadir una tarea, el selector vuelve al valor por defecto.
-- [ ] `npm run build` y `npm run lint` pasan sin errores.
+- [x] Las tareas nuevas se crean con la propiedad `priority`.
+- [x] `TaskItem.jsx` renderiza la prioridad como texto visible, no solo como color.
+- [x] `styles.css` define un estilo diferenciado para cada una de las tres prioridades.
+- [x] Tras añadir una tarea, el selector vuelve al valor por defecto.
+- [x] `npm run build` y `npm run lint` pasan sin errores.
+
+**Nota:** la defensa contra valores de prioridad inesperados vive en `App.addTask`, no en
+`TaskForm`: una constante `VALID_PRIORITIES = ['baja', 'media', 'alta']` decide si el valor recibido
+es válido; si no lo es, se sustituye por `'media'` antes de crear la tarea, de modo que el estado
+nunca contiene una prioridad fuera de las tres permitidas, incluso si `TaskForm` llegara a enviar un
+valor distinto a los suyos propios.
 
 ---
 
@@ -313,6 +319,6 @@ Verificar que todos los requisitos iniciales funcionan, dejar el repositorio lim
 | 1 — Preparación del proyecto | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 2 — Interfaz base | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 3 — Gestión de tareas | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 4 — Prioridades | ⚪ Pendiente | — | — |
+| 4 — Prioridades | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 5 — Persistencia local | ⚪ Pendiente | — | — |
 | 6 — Revisión final | ⚪ Pendiente | — | — |
