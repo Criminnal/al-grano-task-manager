@@ -253,7 +253,7 @@ valor distinto a los suyos propios.
 
 ### Fase 5 — Persistencia local
 
-**Estado:** ⚪ Pendiente
+**Estado:** 🟢 Completado (2026-08-24)
 
 **Objetivo**
 Que las tareas sobrevivan a una recarga o al cierre del navegador, usando `localStorage`.
@@ -267,13 +267,22 @@ Que las tareas sobrevivan a una recarga o al cierre del navegador, usando `local
    es inválido, arrancar con una lista vacía.
 
 **Criterios de aceptación (verificables)**
-- [ ] Existe `src/storage.js` y exporta las funciones de carga y guardado.
-- [ ] La lectura de `localStorage` está envuelta en `try/catch` y devuelve `[]` ante un error.
-- [ ] `App.jsx` usa `useEffect` para guardar cuando cambia `tasks`.
-- [ ] Manual: se añaden tareas, se recarga con F5 y siguen ahí, conservando su estado de
+- [x] Existe `src/storage.js` y exporta las funciones de carga y guardado.
+- [x] La lectura de `localStorage` está envuelta en `try/catch` y devuelve `[]` ante un error.
+- [x] `App.jsx` usa `useEffect` para guardar cuando cambia `tasks`.
+- [x] Manual: se añaden tareas, se recarga con F5 y siguen ahí, conservando su estado de
       completada y su prioridad.
-- [ ] Manual: escribir un valor inválido en la clave de `localStorage` y recargar no rompe la app.
-- [ ] `npm run build` y `npm run lint` pasan sin errores.
+- [x] Manual: escribir un valor inválido en la clave de `localStorage` y recargar no rompe la app.
+- [x] `npm run build` y `npm run lint` pasan sin errores.
+
+**Nota — validación de datos cargados:** `loadTasks()` no se limita a proteger `JSON.parse` con
+`try/catch`; también exige que el resultado sea un array (si no lo es —objeto, `null`, cadena,
+número—, devuelve `[]`) y valida cada entrada de forma individual (`id` string no vacío, `text`
+string no vacío tras `trim()`, `completed` booleano, `priority` en `baja`/`media`/`alta`,
+`createdAt` número finito). **Política elegida para arrays parcialmente corruptos: filtrar y
+conservar solo las entradas válidas**, en vez de descartar el array completo por una sola entrada
+corrupta. Los `id` duplicados se deduplican quedándose con la primera aparición, para no producir
+claves de React repetidas. El texto se normaliza con `trim()` también al cargar, no solo al crear.
 
 ---
 
@@ -320,5 +329,5 @@ Verificar que todos los requisitos iniciales funcionan, dejar el repositorio lim
 | 2 — Interfaz base | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 3 — Gestión de tareas | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 4 — Prioridades | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 5 — Persistencia local | ⚪ Pendiente | — | — |
+| 5 — Persistencia local | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
 | 6 — Revisión final | ⚪ Pendiente | — | — |

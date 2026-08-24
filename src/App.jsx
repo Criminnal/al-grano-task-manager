@@ -1,11 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import TaskForm from './components/TaskForm.jsx'
 import TaskList from './components/TaskList.jsx'
+import { loadTasks, saveTasks } from './storage.js'
 
 const VALID_PRIORITIES = ['baja', 'media', 'alta']
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(loadTasks)
+
+  useEffect(() => {
+    saveTasks(tasks)
+  }, [tasks])
 
   function addTask(text, priority) {
     const trimmedText = text.trim()
