@@ -53,7 +53,9 @@ export function loadTasks() {
 export function saveTasks(tasks) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
+    return true
   } catch {
     // el almacenamiento puede fallar (cuota excedida, modo privado); no debe romper la app
+    return false
   }
 }

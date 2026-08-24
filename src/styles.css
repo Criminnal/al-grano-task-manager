@@ -51,6 +51,16 @@ body {
   padding: var(--spacing-3);
 }
 
+.save-error {
+  margin: 0 0 var(--spacing-3);
+  padding: var(--spacing-2);
+  border: 1px solid #f3b4ad;
+  border-radius: var(--radius);
+  background-color: #fdecea;
+  color: var(--color-danger);
+  font-size: 0.9375rem;
+}
+
 .task-form {
   display: flex;
   flex-wrap: wrap;
@@ -153,7 +163,6 @@ body {
 .task-item__text--completed {
   text-decoration: line-through;
   color: var(--color-text-muted);
-  opacity: 0.75;
 }
 
 .task-item__priority {
