@@ -288,7 +288,7 @@ claves de React repetidas. El texto se normaliza con `trim()` también al cargar
 
 ### Fase 6 — Revisión final
 
-**Estado:** ⚪ Pendiente
+**Estado:** 🟢 Completado (2026-08-24)
 
 **Objetivo**
 Verificar que todos los requisitos iniciales funcionan, dejar el repositorio limpio y documentado.
@@ -302,14 +302,22 @@ Verificar que todos los requisitos iniciales funcionan, dejar el repositorio lim
 6. Comprobar que la app se ve correctamente en una ventana estrecha (móvil).
 
 **Criterios de aceptación (verificables)**
-- [ ] Los 7 requisitos funcionan: crear · listar · completar · descompletar · eliminar · prioridad ·
+- [x] Los 7 requisitos funcionan: crear · listar · completar · descompletar · eliminar · prioridad ·
       persistencia.
-- [ ] `npm run lint` sin errores; cualquier warning queda documentado en el informe.
-- [ ] `npm run build` termina con código de salida 0.
-- [ ] No hay `console.log` ni código comentado sin uso en `src/`.
-- [ ] `README.md` explica instalación y ejecución.
-- [ ] Todas las fases anteriores están en estado 🟢.
-- [ ] Las dependencias de producción siguen siendo únicamente `react` y `react-dom`.
+- [x] `npm run lint` sin errores; cualquier warning queda documentado en el informe.
+- [x] `npm run build` termina con código de salida 0.
+- [x] No hay `console.log` ni código comentado sin uso en `src/`.
+- [x] `README.md` explica instalación y ejecución.
+- [x] Todas las fases anteriores están en estado 🟢.
+- [x] Las dependencias de producción siguen siendo únicamente `react` y `react-dom`.
+
+**Nota:** revisión exhaustiva sin defectos encontrados. Se comprobaron los 7 requisitos, los casos
+límite de validación (entrada vacía/espacios, texto recortado, selector de prioridad), los casos de
+`localStorage` corrupto o no-array, identificadores duplicados, contraste de las etiquetas de
+prioridad, orden de tabulación, nombres accesibles, foco visible, diseño responsive y consola del
+navegador. `npm run preview` también se verificó sirviendo correctamente el build de producción. No
+fue necesaria ninguna corrección de código; el único cambio de esta fase fue la redacción completa
+de `README.md` y el cierre de este documento.
 
 ---
 
@@ -325,9 +333,9 @@ Verificar que todos los requisitos iniciales funcionan, dejar el repositorio lim
 
 | Fase | Estado | Fecha de cierre | Commit |
 | --- | --- | --- | --- |
-| 1 — Preparación del proyecto | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 2 — Interfaz base | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 3 — Gestión de tareas | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 4 — Prioridades | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 5 — Persistencia local | 🟢 Completado | 2026-08-24 | (pendiente de commit — no solicitado en esta fase) |
-| 6 — Revisión final | ⚪ Pendiente | — | — |
+| 1 — Preparación del proyecto | 🟢 Completado | 2026-08-24 | `c9ecafe5c78a53ef60abf11c122ba7d920f97dfe` |
+| 2 — Interfaz base | 🟢 Completado | 2026-08-24 | `bdbdf411ae40c302018bac072f2ba7ee8c5b3abb` |
+| 3 — Gestión de tareas | 🟢 Completado | 2026-08-24 | `f4f9c735ce8f9023cc8a137a479729df6313adca` |
+| 4 — Prioridades | 🟢 Completado | 2026-08-24 | `c197df0a1ff99c2607baaa2896a9253247ebed96` |
+| 5 — Persistencia local | 🟢 Completado | 2026-08-24 | `0b67d79c8da497c8963bb12784f5d2fa4c666eaa` |
+| 6 — Revisión final | 🟢 Completado | 2026-08-24 | (pendiente de commit manual) |
